@@ -10,6 +10,12 @@ var step = 3;
 var cursor = '<span class="cursor-blink">|</span>';
 
 function init() {
+    //load file from params
+    var urlParams = new URLSearchParams(window.location.search);
+    var filepath = urlParams.get('filepath');
+    preLoadFile(filepath);
+    console.log(urlParams);
+    var myParam = urlParams.get('myParam');
     document.onkeypress = hType;
 }
 
@@ -25,5 +31,16 @@ function hType() {
     progress += step;
     cheatCode.innerHTML = text2Type.substring(0, progress) + cursor;
 }
+
+function preLoadFile(path) {
+    if(!path) return;
+    var client = new XMLHttpRequest();
+    client.open('GET', path);
+    client.onreadystatechange = function() {
+        document.getElementById('inputCode').value = client.responseText;
+        console.log(client.responseText);
+    }
+    client.send();
+    }
 
 init();
