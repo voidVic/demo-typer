@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <title>HcT-Pro</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <div id="p1" class="show">
+        <h1 class="center">Demo Typer Pro</h1>
+        <div class="select">
+            <select name="level" id="cLevel">
+                <option value="3">Select your typing speed level </option>
+                <option value="1">Noob</option>
+                <option value="3">human mode</option>
+                <option value="5">Pro Mode</option>
+                <option value="10">wohh.. that's fast</option>
+                <option value="30">God Mode</option>
+            </select>
+        </div>
+        <textarea class="ta" name="ipc" id="inputCode" cols="200" rows="25"
+        placeholder="/* Place your code here */">
+            
+        </textarea>
+        <br>
+        <div class="button_cont"  id="goTyperMode" onclick="goTypeMode()" align="center">
+            <a class="example_d"  >Go Hacker Mode</a>
+        </div>
+    </div>
+    <div id="p2" class="hide">
+        <div class="hackerConsole">
+            <pre>
+            <span id="cheatCode">
+            <span class="cursor-blink">|</span>
+            </span>
+            
+        </pre>
+        </div>
+    </div>
+
+    <script src="./script/app.js"></script>
+</body>
+
+</html>
